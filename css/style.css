@@ -1,0 +1,383 @@
+@charset "UTF-8";
+/*Обнуление*/
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Roboto:wght@300;400;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+.container {
+  max-width: 30px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+/* Portrait tablets and medium desktops */
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+/* Landscape phones and smaller */
+body {
+  background-color: #7c7b89;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main__body {
+  padding: 90px 0 30px 0;
+}
+
+.main__title {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.main__text {
+  font-size: 20px;
+}
+
+.main__text p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.main__block {
+  padding: 30px;
+}
+
+.main__block-1 {
+  background-color: #e9723d;
+}
+
+.main__block-2 {
+  background-color: #0b7fab;
+}
+
+.main__block-3 {
+  background-color: #f4d75e;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #f1e4de;
+}
+
+.header__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 70px;
+}
+
+.header__logo {
+  width: 40px;
+  height: 40px;
+  background-color: #0b7fab;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+@media (max-width: 767px) {
+  .header__menu {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #683838;
+    -webkit-transition: left 0.3s ease 0s;
+    transition: left 0.3s ease 0s;
+    padding: 90px 10px 10px 10px;
+  }
+  .header__menu._active {
+    left: 0;
+  }
+  .header__menu::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 6;
+    background-color: white;
+  }
+}
+
+.header__burger {
+  display: none;
+  position: relative;
+  cursor: pointer;
+  height: 20px;
+  width: 30px;
+}
+
+@media (max-width: 767px) {
+  .header__burger {
+    display: block;
+    z-index: 5;
+  }
+}
+
+.header__burger._active span {
+  -webkit-transform: scale(0) translate(0px, -50%);
+          transform: scale(0) translate(0px, -50%);
+}
+
+.header__burger._active::after {
+  -webkit-transform: rotateZ(45deg) translate(0px, 50%);
+          transform: rotateZ(45deg) translate(0px, 50%);
+  bottom: 50%;
+}
+
+.header__burger._active::before {
+  -webkit-transform: rotateZ(-45deg) translate(0px, -50%);
+          transform: rotateZ(-45deg) translate(0px, -50%);
+  top: 50%;
+}
+
+.header__burger::before, .header__burger::after,
+.header__burger span {
+  left: 0;
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background-color: black;
+}
+
+.header__burger::before, .header__burger::after {
+  content: "";
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger span {
+  top: 50%;
+  -webkit-transform: translate(0px, -50%);
+          transform: translate(0px, -50%);
+}
+
+.menu__list {
+  position: relative;
+}
+
+@media (min-width: 767px) {
+  .menu__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.menu__item {
+  padding: 10px 0;
+}
+
+.menu__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  .menu__item {
+    padding: 0;
+  }
+  .menu__item:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (any-hover: hover) {
+  .menu__item-dropdown:hover .menu__sub-list {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate(0px, 0%);
+            transform: translate(0px, 0%);
+    pointer-events: all;
+  }
+}
+
+.menu__link {
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .menu__link {
+    font-size: 40px;
+  }
+}
+
+.menu__sub-list {
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate(0px, 10%);
+          transform: translate(0px, 10%);
+  -webkit-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .menu__sub-list {
+    display: none;
+    position: relative;
+    margin-top: 20px;
+  }
+}
+
+.menu__sub-item {
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .menu__sub-link {
+    font-size: 31px;
+  }
+}
+
+body._touch .menu__arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 15px solid black;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+@media (max-width: 767px) {
+  body._touch .menu__arrow {
+    position: absolute;
+    right: 0;
+  }
+}
+
+body._touch .menu__item-dropdown._active .menu__arrow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body._touch .menu__item-dropdown._active .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate(0px, 0%);
+          transform: translate(0px, 0%);
+  pointer-events: all;
+  display: block;
+}
